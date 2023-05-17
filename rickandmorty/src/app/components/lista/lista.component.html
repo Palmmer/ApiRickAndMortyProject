@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="container__filter">
+        <label>Filter:</label>
+        <input type="text" class="filter" (input)="getFilters()" #value_filter />
+    </div>
+    <div class="container__cards">
+        <div class="container_card" *ngFor="let card of list_prev.results">
+            <app-personaje [info_personaje]="card"></app-personaje>
+        </div>
+    </div>
+    <div class="container__pagination">
+        <button (click)="prev()">
+            prev
+        </button>
+        <div class="page_numbers">
+            <div class="number"
+                *ngFor="let _ of [].constructor(list_prev.info ? list_prev.info.pages : 0), let x = index"
+                (click)="goTo(x + 1)">
+                <span>{{x + 1}}</span>
+            </div>
+        </div>
+        <button (click)="next()">
+            next
+        </button>
+    </div>
+</div>

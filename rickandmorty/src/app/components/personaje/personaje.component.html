@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="container__img">
+        <img [src]="info_personaje.image" alt="">
+    </div>
+    <div class="container__info">
+        <p><strong>Name:</strong> {{info_personaje.name}}</p>
+        <p><strong>Genero:</strong> {{info_personaje.gender}}</p>
+        <p><strong>Status:</strong> {{info_personaje.status}}</p>
+        <p><strong>Especie:</strong> {{info_personaje.species}}</p>
+        <p><strong>Tipo:</strong> {{info_personaje.type ? info_personaje.type : "N/A"}}</p>
+        <p><strong>Ubicacion:</strong> {{info_personaje.location.name}}</p>
+        <p><strong>Origen:</strong> {{info_personaje.origin.name}}</p>
+        <p><strong>Fecha:</strong> {{info_personaje.created | date: "mediumDate"}}</p>
+    </div>
+
+</div>
